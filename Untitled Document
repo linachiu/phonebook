@@ -1,0 +1,85 @@
+lina@lina-HP-2000-Notebook-PC:~/phonebook$ echo 1 | sudo tee /proc/sys/vm/drop_caches
+1
+lina@lina-HP-2000-Notebook-PC:~/phonebook$ ./phonebook_opt
+size of entry : 40 bytes
+execution time of append() : 0.083861 sec
+execution time of findName() : 0.003746 sec
+lina@lina-HP-2000-Notebook-PC:~/phonebook$ echo 1 | sudo tee /proc/sys/vm/drop_caches
+1
+lina@lina-HP-2000-Notebook-PC:~/phonebook$ ./phonebook_opt
+size of entry : 40 bytes
+execution time of append() : 0.083834 sec
+execution time of findName() : 0.003717 sec
+lina@lina-HP-2000-Notebook-PC:~/phonebook$ echo 1 | sudo tee /proc/sys/vm/drop_caches
+1
+lina@lina-HP-2000-Notebook-PC:~/phonebook$ ./phonebook_orig
+size of entry : 136 bytes
+execution time of append() : 0.096668 sec
+execution time of findName() : 0.005940 sec
+lina@lina-HP-2000-Notebook-PC:~/phonebook$ ./phonebook_opt
+size of entry : 40 bytes
+execution time of append() : 0.073386 sec
+execution time of findName() : 0.003982 sec
+lina@lina-HP-2000-Notebook-PC:~/phonebook$ ./phonebook_opt
+size of entry : 40 bytes
+execution time of append() : 0.042952 sec
+execution time of findName() : 0.002817 sec
+lina@lina-HP-2000-Notebook-PC:~/phonebook$ ./phonebook_opt
+size of entry : 40 bytes
+execution time of append() : 0.049127 sec
+execution time of findName() : 0.002445 sec
+lina@lina-HP-2000-Notebook-PC:~/phonebook$ ./phonebook_opt
+size of entry : 40 bytes
+execution time of append() : 0.074349 sec
+execution time of findName() : 0.003936 sec
+lina@lina-HP-2000-Notebook-PC:~/phonebook$ ./phonebook_opt
+size of entry : 40 bytes
+execution time of append() : 0.052312 sec
+execution time of findName() : 0.002811 sec
+
+
+size of entry : 136 bytes
+execution time of append() : 0.054454 sec
+execution time of findName() : 0.006213 sec
+
+ Performance counter stats for './phonebook_orig' (100 runs):
+
+          201,0310      cache-misses              #   93.881 % of all cache refs      ( +-  0.51% )
+          214,1343      cache-references                                              ( +-  0.44% )
+       2,6080,7284      instructions              #    1.32  insns per cycle          ( +-  0.02% )
+       1,9743,3320      cycles                                                        ( +-  0.79% )
+
+       0.079924222 seconds time elapsed                                          ( +-  1.12% )
+
+
+size of entry : 24 bytes
+execution time of append() : 0.040410 sec
+execution time of findName() : 0.002847 sec
+
+ Performance counter stats for './phonebook_opt' (100 runs):
+
+           26,5226      cache-misses              #   72.155 % of all cache refs      ( +-  0.25% )
+           36,7580      cache-references                                              ( +-  1.39% )
+       2,4060,1712      instructions              #    1.75  insns per cycle          ( +-  0.02% )
+       1,3761,6156      cycles                                                        ( +-  1.12% )
+
+       0.054088597 seconds time elapsed                                          ( +-  1.19% )
+
+
+size of entry : 32 bytes
+execution time of append() : 0.072836 sec
+execution time of findName() : 0.002623 sec
+
+size of entry : 32 bytes
+execution time of append() : 0.035469 sec
+execution time of findName() : 0.002437 sec
+
+ Performance counter stats for './phonebook_opt' (100 runs):
+
+           39,5587      cache-misses              #   67.738 % of all cache refs      ( +-  0.22% )
+           58,3992      cache-references                                              ( +-  0.87% )
+       2,4400,9857      instructions              #    1.65  insns per cycle          ( +-  0.02% )
+       1,4827,5161      cycles                                                        ( +-  1.02% )
+
+       0.050210939 seconds time elapsed                                          ( +-  1.06% )
+
